@@ -1,0 +1,17 @@
+services:
+  rolegrove:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rolegrove
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DATABASE_PATH: /app/data/rolegrove.sqlite
+    volumes:
+      - rolegrove-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  rolegrove-data:
