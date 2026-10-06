@@ -3,7 +3,7 @@ import { DatabaseSync } from "node:sqlite";
 import { mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 
-const databasePath = process.env.DATABASE_PATH || join(process.cwd(), "data", "applywise.sqlite");
+const databasePath = process.env.DATABASE_PATH || join(process.cwd(), "data", "rolegrove.sqlite");
 const remoteDatabaseConfigured = Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
 if (!remoteDatabaseConfigured) mkdirSync(dirname(databasePath), { recursive: true });
 
